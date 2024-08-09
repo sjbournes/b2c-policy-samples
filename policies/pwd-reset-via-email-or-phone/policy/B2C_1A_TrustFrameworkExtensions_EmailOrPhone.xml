@@ -48,6 +48,21 @@
           <Pattern RegularExpression="^[0-9]{1,15}$" HelpText="Please enter digits" />
         </Restriction-->
       </ClaimType>
+       <ClaimType Id="strongAuthenticationPhoneNumber">
+        <DisplayName>Phone Number</DisplayName>
+        <DataType>string</DataType>
+        <Mask Type="Simple">XXX-XXX-</Mask>
+        <UserHelpText>Your telephone number</UserHelpText>
+      </ClaimType>
+        <ClaimType Id="Verified.strongAuthenticationPhoneNumber">
+          <DisplayName>Verified Phone Number</DisplayName>
+          <DataType>string</DataType>
+          <DefaultPartnerClaimTypes>
+            <Protocol Name="OpenIdConnect" PartnerClaimType="phone_number" />
+          </DefaultPartnerClaimTypes>
+          <Mask Type="Simple">XXX-XXX-</Mask>
+          <UserHelpText>Your office phone number that has been verified</UserHelpText>
+      </ClaimType>
     </ClaimsSchema>
     <ClaimsTransformations>
       <ClaimsTransformation Id="CopyPhoneToReadOnly" TransformationMethod="CopyClaim">
