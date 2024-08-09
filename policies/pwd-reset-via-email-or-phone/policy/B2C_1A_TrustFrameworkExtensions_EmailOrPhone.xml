@@ -8,6 +8,12 @@
   PolicyId="B2C_1A_Demo_TrustFrameworkExtensions_PasswordReset_EmailOrPhone" 
   PublicPolicyUri="http://ijtestanddev.onmicrosoft.com/B2C_1A_Demo_TrustFrameworkExtensions_PasswordReset_EmailOrPhone">
 
+    <BasePolicy>
+    <TenantId>ijtestanddev.onmicrosoft.com</TenantId>
+    <PolicyId>B2C_1A_TrustFrameworkBase</PolicyId>
+  </BasePolicy>
+
+
   <BuildingBlocks>
     <ClaimsSchema>
         <ClaimType Id="mfaType">
