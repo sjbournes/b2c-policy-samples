@@ -7,19 +7,24 @@
   TenantId="ijtestanddev.onmicrosoft.com" 
   PolicyId="B2C_1A_Demo_TrustFrameworkExtensions_PasswordReset_EmailOrPhone" 
   PublicPolicyUri="http://ijtestanddev.onmicrosoft.com/B2C_1A_Demo_TrustFrameworkExtensions_PasswordReset_EmailOrPhone">
+ 
+  <BasePolicy>
+    <TenantId>ijtestanddev.onmicrosoft.com</TenantId>
+    <PolicyId>B2C_1A_TrustFrameworkExtensions</PolicyId>
+  </BasePolicy>
 
   <BuildingBlocks>
     <ClaimsSchema>
-        <ClaimType Id="mfaType">
-          <DisplayName>Method of verification</DisplayName>
-          <DataType>string</DataType>
-          <UserHelpText>Choose type of MFA</UserHelpText>
-          <UserInputType>RadioSingleSelect</UserInputType>
-          <Restriction>
-            <Enumeration Text="Email" Value="email" SelectByDefault="true" />
-            <Enumeration Text="Phone" Value="phone" />
-          </Restriction>
-        </ClaimType>
+      <ClaimType Id="mfaType">
+        <DisplayName>Method of verification</DisplayName>
+        <DataType>string</DataType>
+        <UserHelpText>Choose type of MFA</UserHelpText>
+        <UserInputType>RadioSingleSelect</UserInputType>
+        <Restriction>
+          <Enumeration Text="Email" Value="email" SelectByDefault="true" />
+          <Enumeration Text="Phone" Value="phone" />
+        </Restriction>
+      </ClaimType>
       <ClaimType Id="readOnlyPhone">
         <DisplayName>Phone Number</DisplayName>
         <DataType>string</DataType>
